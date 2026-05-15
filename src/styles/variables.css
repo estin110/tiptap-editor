@@ -1,0 +1,30 @@
+:root {
+  --hte-bg: #09090b;
+  --hte-bg2: #18181b;
+  --hte-bg3: #27272a;
+  --hte-bg4: #3f3f46;
+  --hte-tx1: #fafafa;
+  --hte-tx2: #a1a1aa;
+  --hte-tx3: #52525b;
+  --hte-accent: #3b82f6;
+  --hte-accent-hover: #2563eb;
+  --hte-border: #27272a;
+  --hte-ring: rgba(59, 130, 246, 0.45);
+  --hte-r: 8px;
+  --hte-font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --hte-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+}
+
+.hte-light {
+  --hte-bg: #ffffff;
+  --hte-bg2: #f4f4f5;
+  --hte-bg3: #e4e4e7;
+  --hte-bg4: #d4d4d8;
+  --hte-tx1: #09090b;
+  --hte-tx2: #71717a;
+  --hte-tx3: #a1a1aa;
+  --hte-accent: #2563eb;
+  --hte-accent-hover: #1d4ed8;
+  --hte-border: #e4e4e7;
+  --hte-ring: rgba(37, 99, 235, 0.35);
+}

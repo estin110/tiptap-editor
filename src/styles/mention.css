@@ -1,0 +1,32 @@
+.hte-mention-popup {
+  position: fixed;
+  z-index: 1001;
+  background: var(--hte-bg2, #18181b);
+  border: 1px solid var(--hte-border, #27272a);
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .35);
+  min-width: 200px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 4px;
+  animation: hte-mention-in .12s ease;
+}
+
+@keyframes hte-mention-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hte-mention-item {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--hte-tx1, #fafafa);
+  cursor: pointer;
+  transition: background .1s;
+}
+
+.hte-mention-item:hover,
+.hte-mention-item.is-active {
+  background: var(--hte-bg3, #27272a);
+}

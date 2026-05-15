@@ -1,0 +1,203 @@
+.hte-editor {
+  color: var(--hte-tx1);
+  background: var(--hte-bg);
+  border: 1px solid var(--hte-border);
+  transition: border-color .15s;
+}
+
+.hte-editor:focus-within {
+  border-color: var(--hte-accent);
+  box-shadow: 0 0 0 3px var(--hte-ring);
+}
+
+/* ---- ProseMirror core ---- */
+.hte-content .ProseMirror {
+  min-height: 200px;
+  outline: none;
+  font-size: 15px;
+  line-height: 1.75;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.hte-content .ProseMirror > * + * {
+  margin-top: .5em;
+}
+
+/* Placeholder */
+.hte-content .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: var(--hte-tx3);
+  pointer-events: none;
+  float: inline-start;
+  height: 0;
+}
+
+/* Headings */
+.hte-content .ProseMirror h1 { font-size: 1.85em; font-weight: 700; margin: .6em 0 .4em; letter-spacing: -.02em; }
+.hte-content .ProseMirror h2 { font-size: 1.5em; font-weight: 650; margin: .7em 0 .4em; letter-spacing: -.01em; }
+.hte-content .ProseMirror h3 { font-size: 1.25em; font-weight: 600; margin: .8em 0 .4em; }
+
+/* Blockquote */
+.hte-content .ProseMirror blockquote {
+  border-left: 3px solid var(--hte-accent);
+  padding: .5em 1em;
+  margin: 1em 0;
+  color: var(--hte-tx2);
+  background: var(--hte-bg2);
+  border-radius: 0 var(--hte-r) var(--hte-r) 0;
+}
+
+/* Code */
+.hte-content .ProseMirror code {
+  background: var(--hte-bg3);
+  color: var(--hte-accent);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: var(--hte-mono);
+  font-size: .88em;
+}
+
+.hte-content .ProseMirror pre {
+  background: var(--hte-bg3);
+  border-radius: var(--hte-r);
+  padding: 14px 18px;
+  overflow-x: auto;
+  font-family: var(--hte-mono);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.hte-content .ProseMirror pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* Lists */
+.hte-content .ProseMirror ul,
+.hte-content .ProseMirror ol {
+  padding-left: 1.5em;
+}
+
+.hte-content .ProseMirror li {
+  margin: .2em 0;
+}
+
+.hte-content .ProseMirror ul[data-type="taskList"] {
+  list-style: none;
+  padding-left: 0;
+}
+
+.hte-content .ProseMirror ul[data-type="taskList"] li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.hte-content .ProseMirror ul[data-type="taskList"] li label {
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.hte-content .ProseMirror ul[data-type="taskList"] li input[type="checkbox"] {
+  accent-color: var(--hte-accent);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Links */
+.hte-content .ProseMirror a {
+  color: var(--hte-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  transition: color .12s;
+}
+
+.hte-content .ProseMirror a:hover {
+  color: var(--hte-accent-hover);
+}
+
+/* Images */
+.hte-content .ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--hte-r);
+  margin: .5em 0;
+  transition: box-shadow .15s;
+}
+
+.hte-content .ProseMirror img:hover {
+  box-shadow: 0 0 0 2px var(--hte-accent);
+}
+
+/* Tables */
+.hte-content .ProseMirror table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  overflow: hidden;
+  border-radius: var(--hte-r);
+}
+
+.hte-content .ProseMirror th,
+.hte-content .ProseMirror td {
+  border: 1px solid var(--hte-border);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+  position: relative;
+  transition: background .1s;
+}
+
+.hte-content .ProseMirror th {
+  background: var(--hte-bg3);
+  font-weight: 600;
+}
+
+.hte-content .ProseMirror .selectedCell {
+  background: rgba(59, 130, 246, .1);
+}
+
+/* Horizontal rule */
+.hte-content .ProseMirror hr {
+  border: none;
+  border-top: 1px solid var(--hte-border);
+  margin: 1.5em 0;
+}
+
+/* Color / highlight marks */
+.hte-content .ProseMirror mark {
+  border-radius: 2px;
+  padding: 1px 0;
+}
+
+/* Math blocks */
+.hte-content .ProseMirror .math-block:hover,
+.hte-content .ProseMirror .math-inline:hover {
+  background: var(--hte-bg3);
+  outline: 1px solid var(--hte-border);
+  outline-offset: 2px;
+}
+
+/* Scrollbar */
+.hte-content::-webkit-scrollbar {
+  width: 6px;
+}
+.hte-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.hte-content::-webkit-scrollbar-thumb {
+  background: var(--hte-bg4);
+  border-radius: 3px;
+}
+.hte-content::-webkit-scrollbar-thumb:hover {
+  background: var(--hte-tx3);
+}
+
+/* Selection */
+.hte-content .ProseMirror ::selection {
+  background: rgba(59, 130, 246, .25);
+}

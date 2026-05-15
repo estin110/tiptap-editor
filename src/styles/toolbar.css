@@ -1,0 +1,7 @@
+.hte-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--hte-bg2);
+  border-bottom: 1px solid var(--hte-border);
+}
